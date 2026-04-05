@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNLIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body data-page="post">
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">UN<span>LIT</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Archive</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="submit.html">Submit</a></li>
+    </ul>
+  </nav>
+
+  <!-- Back link -->
+  <div class="container" style="padding-top: 7rem; padding-bottom: 0;">
+    <a href="index.html" style="font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); transition: color 0.2s;"
+       onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+      ← Archive
+    </a>
+  </div>
+
+  <!-- Post content rendered by JS -->
+  <div id="post-content">
+    <!-- Loading state -->
+    <div class="container" style="padding: 3rem 0; color: var(--text-muted); font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;">
+      Loading…
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">UN<span>LIT</span></div>
+      <p class="footer-tagline">
+        아무도 주목하지 않은 아름다움을 발굴하고 큐레이션하는 에디토리얼 플랫폼.
+      </p>
+    </div>
+    <div>
+      <div class="footer-links-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Archive</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="submit.html">Submit a Find</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-links-title">Categories</div>
+      <ul class="footer-links">
+        <li><a href="#">Film & Moving Image</a></li>
+        <li><a href="#">Contemporary Art</a></li>
+        <li><a href="#">Architecture & Space</a></li>
+        <li><a href="#">Object & Fashion</a></li>
+        <li><a href="#">Nature & Environment</a></li>
+        <li><a href="#">Sound & Music</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 UNLIT. All rights reserved.</span>
+      <span class="footer-copyright">Beauty goes unnoticed — until now.</span>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

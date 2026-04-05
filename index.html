@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNLIT — Beauty Curation</title>
+  <meta name="description" content="주목받지 못한 아름다움을 발굴하고 큐레이션하는 에디토리얼 플랫폼. Curating beauty that goes unnoticed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body data-page="home">
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">UN<span>LIT</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Archive</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="submit.html">Submit</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Beauty Curation Platform</p>
+      <h1 class="hero-title serif">
+        아무도 주목하지 않은<br>
+        것들에 대하여
+      </h1>
+      <p class="hero-subtitle">
+        비닐봉지가 바람에 날리는 순간. 완공 전 건물을 통과하는 빛.
+        고속도로 소음이 화음이 되는 찰나. 아름다움은 이미 유명한 것들 사이에 있지 않다.
+      </p>
+      <div class="hero-meta" id="hero-stats">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto-section">
+    <div class="container">
+      <p class="manifesto-text serif">
+        우리는 이미 유명한 것을 다시 다루지 않는다.
+        <em>우리가 찾는 아름다움은 설명 없이도 작동하고,
+        이름 없이도 존재하며, 주목 없이도 아름답다.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- POSTS -->
+  <section class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Latest Picks</div>
+        <h2 class="section-title serif">에디터 픽</h2>
+      </div>
+      <a class="section-link" href="#">View All →</a>
+    </div>
+
+    <!-- Category filter bar -->
+    <div class="categories-bar" id="categories-bar">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Posts grid -->
+    <div class="grid-2" id="posts-grid" style="margin-top: 1.5rem; gap: 1px; background: var(--border);">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- TEAM CTA -->
+  <section style="padding: var(--space-xl) 0; border-top: 1px solid var(--border); margin-top: var(--space-xl);">
+    <div class="container">
+      <div class="section-label" style="margin-bottom: 1rem;">Team</div>
+      <h2 class="serif" style="font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; max-width: 600px; margin-bottom: 1.5rem;">
+        함께 발굴할 에디터를 찾습니다
+      </h2>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 480px; line-height: 1.8; margin-bottom: 2rem;">
+        필름, 현대미술, 건축, 오브젝트, 자연, 사운드 — 각 분야의 에디터와
+        모든 것을 결정할 헤드 에디터를 모집합니다.
+      </p>
+      <a href="team.html" style="display: inline-block; padding: 0.8rem 2rem; border: 1px solid var(--accent); color: var(--accent); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; transition: background 0.2s, color 0.2s;"
+         onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'"
+         onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">
+        팀 보기 →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">UN<span>LIT</span></div>
+      <p class="footer-tagline">
+        아무도 주목하지 않은 아름다움을 발굴하고 큐레이션하는 에디토리얼 플랫폼.
+      </p>
+    </div>
+    <div>
+      <div class="footer-links-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Archive</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="submit.html">Submit a Find</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-links-title">Categories</div>
+      <ul class="footer-links">
+        <li><a href="#">Film & Moving Image</a></li>
+        <li><a href="#">Contemporary Art</a></li>
+        <li><a href="#">Architecture & Space</a></li>
+        <li><a href="#">Object & Fashion</a></li>
+        <li><a href="#">Nature & Environment</a></li>
+        <li><a href="#">Sound & Music</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 UNLIT. All rights reserved.</span>
+      <span class="footer-copyright">Beauty goes unnoticed — until now.</span>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

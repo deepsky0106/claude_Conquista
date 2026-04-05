@@ -1,0 +1,109 @@
+{
+  "headEditor": {
+    "id": "head",
+    "name": "Head Editor",
+    "role": "편집장",
+    "roleEn": "Editor-in-Chief",
+    "bio": "어떤 포스팅이 살아남을지 결정한다. 모든 에디터의 픽을 검토하고 최종 큐레이션을 승인한다.",
+    "bioEn": "Decides what survives. Reviews all editor picks and approves the final curation.",
+    "placeholder": true
+  },
+  "categories": [
+    {
+      "id": "film",
+      "name": "필름 & 무빙 이미지",
+      "nameEn": "Film & Moving Image",
+      "description": "영화, 단편, 뮤직비디오, 영상 속 찰나의 프레임들",
+      "descriptionEn": "Frames from film, shorts, music videos — the blink-and-miss-it moments",
+      "color": "#8B7355",
+      "editors": [
+        {
+          "id": "editor-film-01",
+          "name": "TBD",
+          "placeholder": true,
+          "role": "Film Editor"
+        }
+      ]
+    },
+    {
+      "id": "contemporary-art",
+      "name": "현대미술",
+      "nameEn": "Contemporary Art",
+      "description": "갤러리 밖에서도, 설명 없이도 작동하는 것들",
+      "descriptionEn": "Things that work without a gallery wall and without an explanation",
+      "color": "#4A5568",
+      "editors": [
+        {
+          "id": "editor-art-01",
+          "name": "TBD",
+          "placeholder": true,
+          "role": "Art Editor"
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "name": "건축 & 공간",
+      "nameEn": "Architecture & Space",
+      "description": "아무도 주목하지 않는 계단, 빛이 드는 방식, 틈새",
+      "descriptionEn": "Staircases nobody photographs, the way light enters, the gaps in between",
+      "color": "#6B7280",
+      "editors": [
+        {
+          "id": "editor-arch-01",
+          "name": "TBD",
+          "placeholder": true,
+          "role": "Architecture Editor"
+        }
+      ]
+    },
+    {
+      "id": "object",
+      "name": "오브젝트 & 패션",
+      "nameEn": "Object & Fashion",
+      "description": "사물의 존재감. 패션이 사물이 되는 순간",
+      "descriptionEn": "The presence of things. The moment fashion becomes object",
+      "color": "#9CA3AF",
+      "editors": [
+        {
+          "id": "editor-obj-01",
+          "name": "TBD",
+          "placeholder": true,
+          "role": "Object Editor"
+        }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "자연 & 환경",
+      "nameEn": "Nature & Environment",
+      "description": "발견되길 기다리는 것들. 날씨, 계절, 지형",
+      "descriptionEn": "Things waiting to be noticed. Weather, seasons, terrain",
+      "color": "#6B7A5E",
+      "editors": [
+        {
+          "id": "editor-nat-01",
+          "name": "TBD",
+          "placeholder": true,
+          "role": "Nature Editor"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "name": "사운드 & 음악",
+      "nameEn": "Sound & Music",
+      "description": "배경음이 전경이 될 때. 소리의 질감",
+      "descriptionEn": "When background becomes foreground. The texture of sound",
+      "color": "#7C6B8A",
+      "editors": [
+        {
+          "id": "editor-snd-01",
+          "name": "TBD",
+          "placeholder": true,
+          "role": "Sound Editor"
+        }
+      ]
+    }
+  ]
+}

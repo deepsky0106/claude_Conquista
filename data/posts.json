@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": "001",
+      "status": "published",
+      "featured": true,
+      "title": "비닐봉지가 춤추는 골목",
+      "titleEn": "A Plastic Bag Dancing in an Alley",
+      "category": "film",
+      "editorId": "editor-film-01",
+      "date": "2026-04-05",
+      "source": "American Beauty (1999), dir. Sam Mendes",
+      "description": "리키 피츠가 카메라로 담은 바람에 흔들리는 비닐봉지. 세상에서 가장 아름다운 것이 무엇인지를 다시 묻게 만드는 장면. 의도되지 않은 움직임, 바람의 우연, 일상의 쓰레기가 지닌 무게.",
+      "descriptionEn": "Ricky Fitts filming a plastic bag caught in wind. A scene that makes you ask again what beautiful means. Unintended movement, the accident of wind, the weight carried by everyday trash.",
+      "tags": ["film", "movement", "found", "everyday"],
+      "placeholder": true,
+      "imageCredit": "placeholder"
+    },
+    {
+      "id": "002",
+      "status": "published",
+      "featured": false,
+      "title": "고속도로 소음이 화음이 되는 순간",
+      "titleEn": "The Moment Highway Noise Becomes Harmony",
+      "category": "sound",
+      "editorId": "editor-snd-01",
+      "date": "2026-04-05",
+      "source": "Field recording — author unknown",
+      "description": "특정 속도로 차들이 지나갈 때 생기는 도플러 겹침. 작곡된 것이 아닌데 코드처럼 들린다. 인프라스트럭처가 악기가 되는 찰나.",
+      "descriptionEn": "The Doppler overlap created when cars pass at a certain speed. Not composed, but it sounds like a chord. The instant infrastructure becomes instrument.",
+      "tags": ["sound", "urban", "accident", "infrastructure"],
+      "placeholder": true,
+      "imageCredit": "placeholder"
+    },
+    {
+      "id": "003",
+      "status": "draft",
+      "featured": false,
+      "title": "미완성 건물의 빛",
+      "titleEn": "Light Through an Unfinished Building",
+      "category": "architecture",
+      "editorId": "editor-arch-01",
+      "date": "2026-04-05",
+      "source": "TBD",
+      "description": "완공되기 전의 건물. 아직 벽이 없어서 빛이 구조를 통과한다. 완성되면 사라질 아름다움.",
+      "descriptionEn": "A building before completion. No walls yet, so light passes through the structure. Beauty that disappears once finished.",
+      "tags": ["architecture", "light", "temporary", "construction"],
+      "placeholder": true,
+      "imageCredit": "placeholder"
+    }
+  ]
+}

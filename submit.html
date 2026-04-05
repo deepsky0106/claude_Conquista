@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit — UNLIT</title>
+  <meta name="description" content="에디터 지원 또는 발굴한 아름다움을 제안하세요." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .form-section {
+      padding: calc(var(--space-xl) + 2rem) var(--space-md) var(--space-xl);
+      max-width: 720px;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent-dim);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.7;
+    }
+
+    select option {
+      background: var(--bg-2);
+    }
+
+    .form-hint {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .type-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: var(--space-lg);
+    }
+
+    .type-option {
+      padding: 1.2rem;
+      background: var(--bg-2);
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .type-option.active {
+      background: var(--bg-3);
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .type-option-title {
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .type-option-desc {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    .form-section-heading {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body data-page="submit">
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">UN<span>LIT</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Archive</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="submit.html">Submit</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section class="form-section">
+      <p class="hero-eyebrow" style="margin-bottom: 1rem;">Submit</p>
+      <h1 class="serif" style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1rem;">
+        발굴하거나,<br>합류하거나
+      </h1>
+      <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: var(--space-lg); max-width: 480px;">
+        당신이 발굴한 아름다운 것을 제안하거나, 에디터로 합류하고 싶다면 아래 양식을 작성해주세요.
+      </p>
+
+      <!-- Type selector -->
+      <div class="type-toggle" id="type-toggle">
+        <div class="type-option active" data-type="find" onclick="setType('find')">
+          <div class="type-option-title">발굴 제안</div>
+          <div class="type-option-desc">아름다운 것을 찾았다</div>
+        </div>
+        <div class="type-option" data-type="editor" onclick="setType('editor')">
+          <div class="type-option-title">에디터 지원</div>
+          <div class="type-option-desc">팀에 합류하고 싶다</div>
+        </div>
+      </div>
+
+      <form id="submit-form" onsubmit="handleSubmit(event)">
+        <!-- Common fields -->
+        <div class="form-group">
+          <label>이름 / Name</label>
+          <input type="text" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label>연락처 / Contact</label>
+          <input type="email" name="email" placeholder="email@example.com" required />
+        </div>
+
+        <!-- Find fields -->
+        <div id="find-fields">
+          <div class="form-section-heading">발굴한 것에 대해</div>
+          <div class="form-group">
+            <label>카테고리 / Category</label>
+            <select name="category">
+              <option value="">선택해주세요</option>
+              <option value="film">Film & Moving Image</option>
+              <option value="contemporary-art">Contemporary Art</option>
+              <option value="architecture">Architecture & Space</option>
+              <option value="object">Object & Fashion</option>
+              <option value="nature">Nature & Environment</option>
+              <option value="sound">Sound & Music</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>제목 / Title</label>
+            <input type="text" name="find-title" placeholder="발굴한 것의 이름 또는 제목" />
+          </div>
+          <div class="form-group">
+            <label>출처 / Source</label>
+            <input type="text" name="source" placeholder="영화명, 작가명, 장소 등" />
+            <p class="form-hint">이미 유명하지 않아도 됩니다. 정확하지 않아도 됩니다.</p>
+          </div>
+          <div class="form-group">
+            <label>왜 아름다운가 / Why is it beautiful</label>
+            <textarea name="description" placeholder="설명하기 어려워도 됩니다. 당신이 왜 멈췄는지를 써주세요."></textarea>
+          </div>
+          <div class="form-group">
+            <label>링크 또는 파일 / Link or Reference</label>
+            <input type="text" name="link" placeholder="URL, 파일명, 위치 등" />
+            <p class="form-hint">없어도 됩니다.</p>
+          </div>
+        </div>
+
+        <!-- Editor fields -->
+        <div id="editor-fields" style="display: none;">
+          <div class="form-section-heading">에디터 지원에 대해</div>
+          <div class="form-group">
+            <label>지원 분야 / Category</label>
+            <select name="editor-category">
+              <option value="">선택해주세요</option>
+              <option value="head">헤드 에디터 (Editor-in-Chief)</option>
+              <option value="film">Film & Moving Image</option>
+              <option value="contemporary-art">Contemporary Art</option>
+              <option value="architecture">Architecture & Space</option>
+              <option value="object">Object & Fashion</option>
+              <option value="nature">Nature & Environment</option>
+              <option value="sound">Sound & Music</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>소개 / About you</label>
+            <textarea name="bio" placeholder="어디서 무엇을 했고, 왜 이 분야에서 아름다운 것을 발굴할 수 있는지"></textarea>
+          </div>
+          <div class="form-group">
+            <label>포트폴리오 / Work</label>
+            <input type="text" name="portfolio" placeholder="URL, SNS, 기존 작업 링크 등" />
+            <p class="form-hint">없어도 됩니다. 있다면 보여주세요.</p>
+          </div>
+          <div class="form-group">
+            <label>발굴 예시 / A sample find</label>
+            <textarea name="sample" placeholder="지금 당장 발굴하고 싶은 것이 있다면 하나만 적어주세요."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">보내기 →</button>
+      </form>
+
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">UN<span>LIT</span></div>
+      <p class="footer-tagline">
+        아무도 주목하지 않은 아름다움을 발굴하고 큐레이션하는 에디토리얼 플랫폼.
+      </p>
+    </div>
+    <div>
+      <div class="footer-links-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Archive</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="submit.html">Submit a Find</a></li>
+      </ul>
+    </div>
+    <div></div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">© 2026 UNLIT. All rights reserved.</span>
+      <span class="footer-copyright">Beauty goes unnoticed — until now.</span>
+    </div>
+  </footer>
+
+  <script>
+    function setType(type) {
+      document.querySelectorAll('.type-option').forEach(el => el.classList.remove('active'));
+      document.querySelector(`[data-type="${type}"]`).classList.add('active');
+      document.getElementById('find-fields').style.display = type === 'find' ? 'block' : 'none';
+      document.getElementById('editor-fields').style.display = type === 'editor' ? 'block' : 'none';
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      // Placeholder: in production, connect to backend/Notion/Airtable
+      const btn = e.target.querySelector('.submit-btn');
+      btn.textContent = '보내졌습니다 ✓';
+      btn.style.borderColor = 'var(--text-muted)';
+      btn.style.color = 'var(--text-secondary)';
+      btn.disabled = true;
+    }
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mark active nav
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === 'submit.html') link.classList.add('active');
+    });
+  </script>
+</body>
+</html>
