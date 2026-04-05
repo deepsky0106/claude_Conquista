@@ -1,0 +1,18 @@
+{
+  "name": "dogwalkpoopoo",
+  "version": "0.1.0",
+  "description": "AI-powered beauty curation platform",
+  "type": "module",
+  "scripts": {
+    "run-editors": "node agents/run.js",
+    "run-film": "node agents/run.js --category film",
+    "run-art": "node agents/run.js --category contemporary-art",
+    "run-arch": "node agents/run.js --category architecture",
+    "run-object": "node agents/run.js --category object",
+    "run-nature": "node agents/run.js --category nature",
+    "run-sound": "node agents/run.js --category sound"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.55.0"
+  }
+}

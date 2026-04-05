@@ -1,4 +1,4 @@
-// UNLIT — Storage / API Abstraction Layer
+// DOGWALKPOOPOO — Storage / API Abstraction Layer
 // store.js — swap localStorage ↔ real API by changing one file
 
 const Store = (() => {
@@ -6,7 +6,7 @@ const Store = (() => {
   // ─── CONFIG ──────────────────────────────────────────────
   // Set USE_API = true and fill API_BASE when backend is ready
   const USE_API = false;
-  const API_BASE = '/api'; // e.g. 'https://api.unlit.xyz'
+  const API_BASE = '/api'; // e.g. 'https://api.dogwalkpoopoo.xyz'
 
   // ─── MOCK USERS (replace with real auth) ─────────────────
   const MOCK_USERS = [
@@ -28,8 +28,8 @@ const Store = (() => {
     set: (key, val) => localStorage.setItem(key, JSON.stringify(val)),
   };
 
-  const getPosts = () => ls.get('unlit_posts', []);
-  const setPosts = (posts) => ls.set('unlit_posts', posts);
+  const getPosts = () => ls.get('dogwalkpoopoo_posts', []);
+  const setPosts = (posts) => ls.set('dogwalkpoopoo_posts', posts);
 
   // ─── AUTH ─────────────────────────────────────────────────
   const Auth = {
@@ -42,7 +42,7 @@ const Store = (() => {
         });
         if (!res.ok) throw new Error('Login failed');
         const user = await res.json();
-        ls.set('unlit_session', user);
+        ls.set('dogwalkpoopoo_session', user);
         return user;
       }
       // Local mock
@@ -50,16 +50,16 @@ const Store = (() => {
       if (!user) throw new Error('Invalid credentials');
       const session = { ...user };
       delete session.password;
-      ls.set('unlit_session', session);
+      ls.set('dogwalkpoopoo_session', session);
       return session;
     },
 
     logout() {
-      localStorage.removeItem('unlit_session');
+      localStorage.removeItem('dogwalkpoopoo_session');
     },
 
     getSession() {
-      return ls.get('unlit_session');
+      return ls.get('dogwalkpoopoo_session');
     },
 
     requireSession(redirectTo = 'login.html') {
@@ -182,7 +182,7 @@ const Store = (() => {
 
   // ─── PRIVATE ──────────────────────────────────────────────
   function _authHeader() {
-    const s = ls.get('unlit_session');
+    const s = ls.get('dogwalkpoopoo_session');
     return s ? { 'X-User-Id': s.id } : {};
   }
 

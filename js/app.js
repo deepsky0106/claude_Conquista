@@ -1,4 +1,4 @@
-// UNLIT — Beauty Curation Platform
+// DOGWALKPOOPOO — Beauty Curation Platform
 // app.js — Core application logic
 
 const App = {
@@ -223,7 +223,7 @@ const App = {
     const post = this.data.posts.posts.find(p => p.id === id);
     if (!post) return;
 
-    document.title = `${post.title} — UNLIT`;
+    document.title = `${post.title} — DOGWALKPOOPOO`;
 
     const categoryName = this.getCategoryName(post.category);
 
