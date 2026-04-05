@@ -19,6 +19,7 @@
       <li><a href="index.html">Archive</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="submit.html">Submit</a></li>
+      <li><a href="admin/login.html" id="admin-nav-link" style="display:none">Admin</a></li>
     </ul>
   </nav>
 
@@ -151,6 +152,19 @@
     </div>
   </footer>
 
+  <script src="./js/store.js"></script>
   <script src="./js/app.js"></script>
+  <script>
+    (function() {
+      const s = Store.Auth.getSession();
+      if (s) {
+        const el = document.getElementById('admin-nav-link');
+        if (el) {
+          el.style.display = 'inline';
+          el.href = s.role === 'head' ? 'admin/head.html' : 'admin/editor.html';
+        }
+      }
+    })();
+  </script>
 </body>
 </html>

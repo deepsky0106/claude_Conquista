@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — UNLIT Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-wrap {
+      width: 100%;
+      max-width: 400px;
+      padding: var(--space-md);
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .login-logo {
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-logo span { color: var(--accent); }
+
+    .login-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .login-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    input, select {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 0.8rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus { border-color: var(--accent-dim); }
+    input::placeholder { color: var(--text-muted); }
+    select option { background: var(--bg-2); }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .login-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .error-msg {
+      font-size: 0.75rem;
+      color: #C07070;
+      text-align: center;
+      margin-top: 1rem;
+      min-height: 1.2em;
+    }
+
+    .dev-hint {
+      margin-top: var(--space-md);
+      border: 1px solid var(--border);
+      background: var(--bg-2);
+      padding: 1.25rem;
+    }
+
+    .dev-hint-title {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .dev-hint-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .dev-hint-row span {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+    }
+
+    .dev-hint-btn {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dim);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+      border: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+
+    .dev-hint-btn:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-header">
+      <div class="login-logo">UN<span>LIT</span></div>
+      <div class="login-sub">Editorial Admin</div>
+    </div>
+
+    <div class="login-card">
+      <form id="login-form">
+        <div class="form-group">
+          <label>역할 / Role</label>
+          <select id="user-id" required>
+            <option value="">선택하세요</option>
+            <option value="head-01">편집장 (Editor-in-Chief)</option>
+            <option value="film-01">Film & Moving Image</option>
+            <option value="art-01">Contemporary Art</option>
+            <option value="arch-01">Architecture & Space</option>
+            <option value="obj-01">Object & Fashion</option>
+            <option value="nat-01">Nature & Environment</option>
+            <option value="snd-01">Sound & Music</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>비밀번호 / Password</label>
+          <input type="password" id="password" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="login-btn">로그인 →</button>
+        <div class="error-msg" id="error-msg"></div>
+      </form>
+    </div>
+
+    <!-- Dev credentials hint (remove in production) -->
+    <div class="dev-hint" id="dev-hint">
+      <div class="dev-hint-title">Dev — Test Credentials</div>
+      <div class="dev-hint-row">
+        <span>head-01</span><span>head0000</span>
+        <button class="dev-hint-btn" onclick="fillCredentials('head-01','head0000')">fill</button>
+      </div>
+      <div class="dev-hint-row">
+        <span>film-01</span><span>film0000</span>
+        <button class="dev-hint-btn" onclick="fillCredentials('film-01','film0000')">fill</button>
+      </div>
+      <div class="dev-hint-row">
+        <span>art-01</span><span>art00000</span>
+        <button class="dev-hint-btn" onclick="fillCredentials('art-01','art00000')">fill</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/store.js"></script>
+  <script>
+    // Redirect if already logged in
+    const session = Store.Auth.getSession();
+    if (session) {
+      window.location.href = session.role === 'head' ? 'head.html' : 'editor.html';
+    }
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const id = document.getElementById('user-id').value;
+      const pw = document.getElementById('password').value;
+      const errEl = document.getElementById('error-msg');
+      errEl.textContent = '';
+
+      try {
+        const user = await Store.Auth.login(id, pw);
+        window.location.href = user.role === 'head' ? 'head.html' : 'editor.html';
+      } catch {
+        errEl.textContent = '잘못된 정보입니다. 다시 확인해주세요.';
+      }
+    });
+
+    function fillCredentials(id, pw) {
+      document.getElementById('user-id').value = id;
+      document.getElementById('password').value = pw;
+    }
+  </script>
+</body>
+</html>
